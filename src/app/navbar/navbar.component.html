@@ -1,0 +1,28 @@
+<nav class=" sticky-top navbar navbar-expand-lg navbar-light bg-light">
+  <img src="assets/img/logo.png" width="50" height="50">
+    <a class="navbar-brand" href="/home">Care4Cars</a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link"  routerLink="/home" routerLinkActive="active-link">Home  <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active-link">Prouducts</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/cart" routerLinkActive="active-link">Cart</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/contacts" routerLinkActive="active-link">About Us</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+      </ul>
+      <a class="nav-link text-dark" (click)="logOut()" routerLink="/login"><b style='color:red ;'>logout</b> </a>
+    </div>
+  </nav> 
+  

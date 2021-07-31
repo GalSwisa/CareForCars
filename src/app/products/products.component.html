@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<body>
+<div class="d-flex flex-row p-2 justify-content-between">
+    <div class="p-2 bd-highlight">  
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="p-2 bd-highlight">
+        <app-product [selectedCategory]="selectedCategory?.selectedCategory"></app-product>
+    </div>
+</div> 
+<app-footer></app-footer>

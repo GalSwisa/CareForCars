@@ -1,0 +1,77 @@
+<app-navbar></app-navbar>
+
+<body>
+
+<div class="px-4 px-lg-0">
+    <!-- For demo purpose -->
+    <div class="container text-white py-5 text-center">
+      <h1 style="color:black;" class="display-4">Personal shopping cart</h1>
+      <p style="color:black;" class="lead mb-0">Here you can manage your purchase, enjoy.</p>
+      <img  width="200" height="170" src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-donations-shopping-carts-forms-membershipworks-21.png">
+   
+    </div>
+    <!-- End -->
+  
+    <div class="pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+  
+            <!-- Shopping cart table -->
+            <div class="table-responsive">
+              <table class="table" *ngIf="empty; else elseBlock">
+                <thead>
+                  <tr>
+                    <th scope="col" class="border-0 bg-light">
+                      <div class="p-2 px-3 text-uppercase">Product</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light">
+                      <div class="py-2 text-uppercase">Price</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light">
+                      <div class="py-2 text-uppercase">Quantity</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light">
+                      <div class="py-2 text-uppercase">Add/Remove</div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let i of arr">
+                    <th scope="row" class="border-0">
+                      <div class="p-2">
+                        <img src="{{i.imgUrl}}" alt="" width="70" height="70" class="img-fluid rounded shadow-sm">
+                        <div class="ml-3 d-inline-block align-middle">
+                          <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{{i.Name}}</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: {{i.Category}}</span>
+                        </div>
+                      </div>
+                    </th>
+                    <td class="border-0 align-middle"><strong>{{i.Price*i.Amount}}$</strong></td>
+                    <td class="border-0 align-middle"><strong>{{i.Amount}}</strong></td>
+                    <td class="border-0 align-middle"><p class="text-dark font-weight-bold"><i class="fa fa-trash" (click)="checkCategoryAdd(i)"><button type="button" class="btn btn-secondary">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path></svg>
+                      <span class="visually-hidden"></span>
+                    </button></i><i class="fa fa-trash" (click)="checkCategoryRemove(i)"><button type="button" class="btn btn-secondary">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16"><path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"></path></svg>
+                      <span class="visually-hidden"></span>
+                    </button></i></p></td>
+                  </tr>
+                  <tr scope="row" class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-centerbg-white rounded">
+                      <br/>
+                      <br/>
+                      <button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="button">
+                        Proceed to Pay {{totalPrice}}$
+                      </button>
+                    </div>
+                  </tr>
+                </tbody>
+              </table>
+              <ng-template #elseBlock>
+                <h1 class="d-flex justify-content-center">Your shopping cart is empty.</h1>
+              </ng-template>
+  
+            </div>
+          </div>
+        </div>
+        <app-footer></app-footer>

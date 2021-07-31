@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<body>
+<div class="py-5" style="background-color:#E0E0E0;" id="venue">
+    <div class="container">
+        <div class="row bg-primary animate-in-down">
+            <div class="p-4 col-md-6 align-self-center text-color">
+                <p class="m-0 h1">{{current.Name}}</p>
+                <h2>Category: {{current.Category}}</h2>
+                <h2>SerialNumber: {{current.SerialNumber}}</h2>
+                <p class="my-4">{{current.Description}}</p> 
+                <p class="h3 text-right font-weight-bold  ">{{current.Price}}$</p>
+            </div>
+            <div class="p-0 col-md-6">
+                <div class="carousel slide" >
+                    <div class="carousel-inner" role="listbox">
+                        <div> <img class="d-block img-fluid w-100" [src]="current.imgUrl"></div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
